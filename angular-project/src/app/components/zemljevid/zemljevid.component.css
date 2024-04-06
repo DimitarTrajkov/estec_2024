@@ -1,0 +1,13 @@
+.zemljevid-container {
+  width: 800px;
+  /* height: 250px; */
+  display: flex;
+  justify-content: center;
+  /* border-radius: 15px; */
+  background-color: aquamarine;
+}
+
+#map {
+  /* position: relative; */
+  height: 593px;
+}
