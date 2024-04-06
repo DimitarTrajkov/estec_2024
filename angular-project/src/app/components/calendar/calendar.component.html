@@ -1,0 +1,16 @@
+<div class="calendar">
+    <h2 class="title">{{ currentDate | date: 'MMMM y' }}</h2>
+    <table>
+      <thead>
+        <tr>
+          <th *ngFor="let day of ['S', 'M', 'T', 'W', 'T', 'F', 'S']" style="background-color: skyblue; color: white">{{ day }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let week of getWeeksInMonth(currentDate)">
+          <td style="color: gray;" *ngFor="let day of week" (click)="selectDate(day)">{{ day ? day.getDate() : '' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
