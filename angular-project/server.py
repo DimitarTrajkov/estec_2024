@@ -1,32 +1,54 @@
-from flask import Flask, jsonify
+from flask import Flask, request, jsonify
 from flask_cors import CORS
-import pandas as pd
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error, r2_score
+from joblib import load
 
 app = Flask(__name__)
 CORS(app)
 
 cached_result = []
-random_forest_model = RandomForestRegressor(n_estimators=100,max_depth = 10, max_features = "sqrt", min_samples_leaf = 4, min_samples_split = 10,  random_state=42) 
+random_forest_model1 = load('random_forest_model_1.joblib')
+random_forest_model2 = load('random_forest_model_2.joblib')
+random_forest_model3 = load('random_forest_model_3.joblib')
+random_forest_model4 = load('random_forest_model_4.joblib')
 
-def slow_function():
-    data = pd.read_csv("gym_1.csv")
-    X = data[['val']]
-    y = data['target']
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    random_forest_model.fit(X_train, y_train)
-    for x in range(24,96):
-        p = x * 15
-        hours = p // 60
-        minutes = p % 60
-        cached_result.append({"label": '{} {}'.format(f'{hours:02}',f'{minutes:02}'), "y": int(random_forest_model.predict([[x]]).tolist()[0])})
 
 @app.route('/get_data', methods=['GET'])
 def get_data():
-    return cached_result
+    random_forest_model = []
+    result = []
+    match(int(request.args.get('param1'))):
+        case 0: random_forest_model = random_forest_model4
+        case 1: random_forest_model = random_forest_model1
+        case 2: random_forest_model = random_forest_model2
+        case 3: random_forest_model = random_forest_model3
+        case 4: random_forest_model = random_forest_model4
+    for x in range(24,96):
+        p = x * 15
+        result.append({"label": '{:02d}:{:02d}'.format(int(p/60),int(p%60)), "y": int(random_forest_model.predict([[x]]).tolist()[0])})
+    return result
+
+@app.route('/get_statistika_hours', methods=['GET'])
+def get_statistika_hours():
+    param1 = int(request.args.get('param1'))
+    param2 = int(request.args.get('param2'))
+    random_forest_model = []
+    result = []
+    match(int(request.args.get('param3'))):
+        case 1: random_forest_model = random_forest_model1
+        case 2: random_forest_model = random_forest_model2
+        case 3: random_forest_model = random_forest_model3
+        case 4: random_forest_model = random_forest_model4
+
+    while(param1 < param2):
+        result.append('{}:00 - {}'.format(param1,int(random_forest_model.predict([[param1*4]]).tolist()[0])))
+        param1 = param1 + 1
+    
+    if(param1 == 24):
+        result.append('00:00 - {}'.format(int(random_forest_model.predict([[param1*4]]).tolist()[0])))
+    else:
+        result.append('{}:00 - {}'.format(param1,int(random_forest_model.predict([[param1*4]]).tolist()[0])))
+
+    return result
 
 if __name__ == '__main__':
-    slow_function()
     app.run(debug=True)

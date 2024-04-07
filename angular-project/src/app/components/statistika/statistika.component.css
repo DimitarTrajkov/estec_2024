@@ -5,3 +5,7 @@
     background-color: lightgray;
     padding: 100px;
 }
+
+.container1 {
+    display: flex;
+}
