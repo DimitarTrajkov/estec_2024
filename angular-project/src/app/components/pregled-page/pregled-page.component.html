@@ -7,10 +7,13 @@
             <label for="telovadnica">Izberite želeno telovadnico:</label>
             <select id="telovadnica" class="dropdown" name="telovadnica">
                 <option value="0"></option>
-                <option value="1">Clever fit Bežigrad</option>
-                <option value="2">Clever fit Šiška</option>
+                <option value="1">BODIFIT Ljubljana</option>
+                <option value="2">Clever fit Letališka</option>
                 <option value="3">Clever fit Situla</option>
-                <option value="4">Clever fit Letališka</option>
+                <option value="4">BODYFIT Celje</option>
+                <option value="5">Clever fit Bežigrad</option>
+                <option value="6">Valkyrie</option>
+                <option value="7">FITINN Fitnes studio</option>
             </select>
 
             <label for="dan">Izberite dan:</label>
@@ -77,7 +80,7 @@
         </form>
     </div>
     <div class="map-container">
-        <app-zemljevid class="zemljevid-container"></app-zemljevid>
+        <app-zemljevid [lat]="lat" [lng] = "lng" class="zemljevid-container"></app-zemljevid>
     </div>
     <div id="statistika" class="stats-container">
     </div>

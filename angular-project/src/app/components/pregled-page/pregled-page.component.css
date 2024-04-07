@@ -25,9 +25,6 @@
 
 .map-container {
     background-color: #fff1cf;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex: 0 0 45%;
     height: 80%;
     /* padding: 10px; */

@@ -21,7 +21,6 @@ export class StatistikaComponent {
   fetchData(): void {
     var gym = document.getElementById('gym') as HTMLSelectElement
     var gymValue = parseInt(gym.value)
-    console.log(gymValue)
     if(gymValue > 0) {
       this.fitnessString = gym.options[gymValue].text + ' -'
       this.http.get(`http://127.0.0.1:5000/get_data?param1=${gymValue}`).subscribe(
@@ -32,7 +31,7 @@ export class StatistikaComponent {
           console.error('Error fetching data:', error);
         }
       );
-      this.http.get(`http://127.0.0.1:5000/get_data?param1=${(gymValue+1)%4}`).subscribe(
+      this.http.get(`http://127.0.0.1:5000/get_data?param1=${(gymValue+1)%7}`).subscribe(
         (result: any) => {
           this.dataGraph2 = result
         },
@@ -40,7 +39,7 @@ export class StatistikaComponent {
           console.error('Error fetching data:', error);
         }
       );
-      this.http.get(`http://127.0.0.1:5000/get_data?param1=${(gymValue+2)%4}`).subscribe(
+      this.http.get(`http://127.0.0.1:5000/get_data?param1=${(gymValue+2)%7}`).subscribe(
         (result: any) => {
           this.dataGraph3 = result
         },
@@ -48,7 +47,7 @@ export class StatistikaComponent {
           console.error('Error fetching data:', error);
         }
       );
-      this.http.get(`http://127.0.0.1:5000/get_data?param1=${(gymValue+3)%4}`).subscribe(
+      this.http.get(`http://127.0.0.1:5000/get_data?param1=${(gymValue+3)%7}`).subscribe(
         (result: any) => {
           this.dataGraph4 = result
         },
