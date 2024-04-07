@@ -14,15 +14,15 @@ export class PregledPageComponent {
     var selectDo = document.getElementById('do_select') as HTMLSelectElement;
     var selectOd = document.getElementById('od_select') as HTMLSelectElement;
     var gym = document.getElementById('telovadnica') as HTMLSelectElement;
-    
-    if(gym.value != "0" && selectOd.value != "0" && selectDo.value != "0")
-        this.fetchData(selectDo.value, selectOd.value, gym.value)
+    console.log(parseInt(selectDo.value))
+    console.log(parseInt(selectOd.value))
+    if(gym.value != "0" && selectOd.value != "0" && parseInt(selectDo.value) >= parseInt(selectOd.value))
+        this.fetchData(selectOd.value, selectDo.value, gym.value)
   }
 
   fetchData(param1: any, param2: any, param3: any): void {
     this.http.get(`http://127.0.0.1:5000/get_statistika_hours?param1=${param1}&param2=${param2}&param3=${param3}`).subscribe(
       (result: any) => {
-        console.log(result)
         var statistika = document.getElementById("statistika")
         if(statistika)
           statistika.innerHTML = '';
