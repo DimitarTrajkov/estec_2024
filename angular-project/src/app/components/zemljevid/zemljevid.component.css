@@ -10,4 +10,5 @@
 #map {
   /* position: relative; */
   height: 593px;
+  border-radius: 10px;
 }
