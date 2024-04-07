@@ -41,7 +41,8 @@ export class GraphComponent implements AfterViewInit, OnChanges {
 
     let chart = new CanvasJS.Chart(chartContainerId, {
       animationEnabled: true,
-      theme: "light1",
+      theme: "light2",
+      backgroundColor: "#e6c7b1",
       title: {
         text: `${this.Fitness} ${this.Day}`
       },

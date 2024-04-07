@@ -80,15 +80,18 @@
     /* display: block; */
 }
 .form-title {
-    font-size:x-large;
+    font-size:50px;
     font-weight: bold;
+    margin-bottom: 15px;
 }
 .dropdown {
     display: block;
     background-color: #e3d1a7;
     color: black;
     padding: 2px;
-    font-size: 12px;
+    font-size: 20px;
+    height: 35px;
+    width: 60%;
     /* margin-top: 2px; */
     margin-bottom: 30px;
     cursor: pointer;
@@ -100,10 +103,16 @@
     flex-direction: row;
     align-items: center;
     width: 100%;
-    height: 25px;
-    margin-top: 0px;
-    
+    height: 35px;
+    font-size: 30px;
+    margin-top: 0px; 
   }
+  option {
+    font-size: 20px;
+  }
+  /* .option:hover {
+    color: #e3d1a7;
+  } */
   .cas {
     margin-bottom: 2px;
     margin-right: 20px;
@@ -116,6 +125,7 @@
     height: 100%;
     width: 30%;
     cursor: pointer;
+    font-size: 20px;
   }
   
   .button-prikaz {
@@ -124,13 +134,14 @@
     justify-content:center;
     flex-direction: row;
     align-items: center;
-    margin-top: 25px;
+    margin-top: 85px;
     border: 3px solid #000000;
     height: 7%;
     width: 30.4%;
     font-weight: bold;
     font-size: 16px;
     cursor: pointer;
+
   }
   #statistka_pregled_naslov{
     padding-bottom: 10px;

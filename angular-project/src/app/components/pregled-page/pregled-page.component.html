@@ -1,94 +1,92 @@
 <div class="main-container">
-  <div class="form-container">
-    <form class="form">
-      <p class="form-title">Vnesite podatke</p>
-      <br />
-      <br />
-      <label for="telovadnica">Izberite želeno telovadnico:</label>
-      <select id="telovadnica" class="dropdown" name="telovadnica">
-        <option value="0"></option>
-        <option value="1">Clever fit Bežigrad</option>
-        <option value="2">Clever fit Šiška</option>
-        <option value="3">Clever fit Situla</option>
-        <option value="4">Clever fit Letališka</option>
-      </select>
+    <div class="form-container">
+        <form class="form">
+            <p class="form-title">Vnesite podatke</p>
+            <br>
+            <br>
+            <label for="telovadnica">Izberite želeno telovadnico:</label>
+            <select id="telovadnica" class="dropdown" name="telovadnica">
+                <option value="0"></option>
+                <option value="1">BODIFIT Ljubljana</option>
+                <option value="2">Clever fit Letališka</option>
+                <option value="3">Clever fit Situla</option>
+                <option value="4">BODYFIT Celje</option>
+                <option value="5">Clever fit Bežigrad</option>
+                <option value="6">Valkyrie</option>
+                <option value="7">FITINN Fitnes studio</option>
+            </select>
 
-      <label for="dan">Izberite dan:</label>
-      <select id="dan" class="dropdown" name="dan">
-        <option value="option0"></option>
-        <option value="option1">Ponedeljek</option>
-        <option value="option2">Torek</option>
-        <option value="option3">Sreda</option>
-        <option value="option4">Četrtek</option>
-        <option value="option5">Petek</option>
-        <option value="option6">Sobota</option>
-        <option value="option7">Nedelja</option>
-      </select>
+            <label for="dan">Izberite dan:</label>
+            <select id="dan" class="dropdown" name="dan">
+                <option value="option0"></option>
+                <option value="option1">Ponedeljek</option>
+                <option value="option2">Torek</option>
+                <option value="option3">Sreda</option>
+                <option value="option4">Četrtek</option>
+                <option value="option5">Petek</option>
+                <option value="option6">Sobota</option>
+                <option value="option7">Nedelja</option>
+            </select>
 
-      <p class="cas">Izberite časovno obdobje:</p>
-      <div class="select-period">
-        <select id="od_select" class="cas-od">
-          <option value="0"></option>
-          <option value="6">6:00</option>
-          <option value="7">7:00</option>
-          <option value="8">8:00</option>
-          <option value="9">9:00</option>
-          <option value="10">10:00</option>
-          <option value="11">11:00</option>
-          <option value="12">12:00</option>
-          <option value="13">13:00</option>
-          <option value="14">14:00</option>
-          <option value="15">15:00</option>
-          <option value="16">16:00</option>
-          <option value="17">17:00</option>
-          <option value="18">18:00</option>
-          <option value="19">19:00</option>
-          <option value="20">20:00</option>
-          <option value="21">21:00</option>
-          <option value="22">22:00</option>
-          <option value="23">23:00</option>
-          <option value="24">00:00</option>
-        </select>
-        <span class="cas">do</span>
-        <select id="do_select" class="cas-do">
-          <option value="0"></option>
-          <option value="6">6:00</option>
-          <option value="7">7:00</option>
-          <option value="8">8:00</option>
-          <option value="9">9:00</option>
-          <option value="10">10:00</option>
-          <option value="11">11:00</option>
-          <option value="12">12:00</option>
-          <option value="13">13:00</option>
-          <option value="14">14:00</option>
-          <option value="15">15:00</option>
-          <option value="16">16:00</option>
-          <option value="17">17:00</option>
-          <option value="18">18:00</option>
-          <option value="19">19:00</option>
-          <option value="20">20:00</option>
-          <option value="21">21:00</option>
-          <option value="22">22:00</option>
-          <option value="23">23:00</option>
-          <option value="24">00:00</option>
-        </select>
-      </div>
-      <input
-        class="button-prikaz"
-        type="submit"
-        (click)="submit()"
-        value="Prikaži"
-      />
-    </form>
-  </div>
-  <div class="map-container">
-    <app-zemljevid class="zemljevid-container"></app-zemljevid>
-  </div>
-  <div id="statistika" class="stats-container">
-    <h3>statistika</h3>
+            <p class="cas">Izberite časovno obdobje:</p>
+            <div class="select-period">
+                <select id="od_select" class="cas-od">
+                    <option value="0"></option>
+                    <option value="6">6:00</option>
+                    <option value="7">7:00</option>
+                    <option value="8">8:00</option>
+                    <option value="9">9:00</option>
+                    <option value="10">10:00</option>
+                    <option value="11">11:00</option>
+                    <option value="12">12:00</option>
+                    <option value="13">13:00</option>
+                    <option value="14">14:00</option>
+                    <option value="15">15:00</option>
+                    <option value="16">16:00</option>
+                    <option value="17">17:00</option>
+                    <option value="18">18:00</option>
+                    <option value="19">19:00</option>
+                    <option value="20">20:00</option>
+                    <option value="21">21:00</option>
+                    <option value="22">22:00</option>
+                    <option value="23">23:00</option>
+                    <option value="24">00:00</option>
+                </select>
+                <span class="cas">-</span>
+                <select id="do_select" class="cas-do">
+                    <option value="0"></option>
+                    <option value="6">6:00</option>
+                    <option value="7">7:00</option>
+                    <option value="8">8:00</option>
+                    <option value="9">9:00</option>
+                    <option value="10">10:00</option>
+                    <option value="11">11:00</option>
+                    <option value="12">12:00</option>
+                    <option value="13">13:00</option>
+                    <option value="14">14:00</option>
+                    <option value="15">15:00</option>
+                    <option value="16">16:00</option>
+                    <option value="17">17:00</option>
+                    <option value="18">18:00</option>
+                    <option value="19">19:00</option>
+                    <option value="20">20:00</option>
+                    <option value="21">21:00</option>
+                    <option value="22">22:00</option>
+                    <option value="23">23:00</option>
+                    <option value="24">00:00</option>
+                </select>
+            </div>
+            <input class="button-prikaz" type="submit" (click)="submit()" value="Prikaži">
+        </form>
+    </div>
+    <div class="map-container">
+        <app-zemljevid [lat]="lat" [lng] = "lng" class="zemljevid-container"></app-zemljevid>
+    </div>
+    <div id="statistika" class="stats-container">
+        <h3>STATISTIKA</h3>
     <div id="statistka_pregled_naslov" class="statistka_pregled_naslov_p">
-      <p class="statistka_pregled_naslov_p">CAS</p>
+      <p class="statistka_pregled_naslov_p">ČAS</p>
       <p class="statistka_pregled_naslov_p">ŠT LJUDI</p>
     </div>
-  </div>
+    </div>
 </div>
