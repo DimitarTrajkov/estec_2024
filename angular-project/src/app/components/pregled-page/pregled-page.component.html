@@ -6,11 +6,11 @@
             <br>
             <label for="telovadnica">Izberite želeno telovadnico:</label>
             <select id="telovadnica" class="dropdown" name="telovadnica">
-                <option value="option0"></option>
-                <option value="option1">Clever fit Bežigrad</option>
-                <option value="option2">Clever fit Šiška</option>
-                <option value="option3">Clever fit Situla</option>
-                <option value="option4">Clever fit Letališka</option>
+                <option value="0"></option>
+                <option value="1">Clever fit Bežigrad</option>
+                <option value="2">Clever fit Šiška</option>
+                <option value="3">Clever fit Situla</option>
+                <option value="4">Clever fit Letališka</option>
             </select>
 
             <label for="dan">Izberite dan:</label>
@@ -27,56 +27,58 @@
 
             <p class="cas">Izberite časovno obdobje:</p>
             <div class="select-period">
-                <select class="cas-od">
-                    <option value="option0"></option>
-                    <option value="option1">6:00</option>
-                    <option value="option2">7:00</option>
-                    <option value="option3">8:00</option>
-                    <option value="option4">9:00</option>
-                    <option value="option5">10:00</option>
-                    <option value="option6">11:00</option>
-                    <option value="option7">12:00</option>
-                    <option value="option0">13:00</option>
-                    <option value="option1">14:00</option>
-                    <option value="option2">15:00</option>
-                    <option value="option3">16:00</option>
-                    <option value="option4">17:00</option>
-                    <option value="option5">18:00</option>
-                    <option value="option6">19:00</option>
-                    <option value="option7">20:00</option>
-                    <option value="option4">21:00</option>
-                    <option value="option5">22:00</option>
+                <select id="od_select" class="cas-od">
+                    <option value="0"></option>
+                    <option value="6">6:00</option>
+                    <option value="7">7:00</option>
+                    <option value="8">8:00</option>
+                    <option value="9">9:00</option>
+                    <option value="10">10:00</option>
+                    <option value="11">11:00</option>
+                    <option value="12">12:00</option>
+                    <option value="13">13:00</option>
+                    <option value="14">14:00</option>
+                    <option value="15">15:00</option>
+                    <option value="16">16:00</option>
+                    <option value="17">17:00</option>
+                    <option value="18">18:00</option>
+                    <option value="19">19:00</option>
+                    <option value="20">20:00</option>
+                    <option value="21">21:00</option>
+                    <option value="22">22:00</option>
+                    <option value="23">23:00</option>
+                    <option value="24">00:00</option>
                 </select>
                 <span class="cas">do</span>
-                <select class="cas-do">
-                    <option value="option0"></option>
-                    <option value="option2">7:00</option>
-                    <option value="option3">8:00</option>
-                    <option value="option4">9:00</option>
-                    <option value="option5">10:00</option>
-                    <option value="option6">11:00</option>
-                    <option value="option7">12:00</option>
-                    <option value="option0">13:00</option>
-                    <option value="option1">14:00</option>
-                    <option value="option2">15:00</option>
-                    <option value="option3">16:00</option>
-                    <option value="option4">17:00</option>
-                    <option value="option5">18:00</option>
-                    <option value="option6">19:00</option>
-                    <option value="option7">20:00</option>
-                    <option value="option4">21:00</option>
-                    <option value="option5">22:00</option>
-                    <option value="option6">23:00</option>
-                    <option value="option7">00:00</option>
+                <select id="do_select" class="cas-do">
+                    <option value="0"></option>
+                    <option value="6">6:00</option>
+                    <option value="7">7:00</option>
+                    <option value="8">8:00</option>
+                    <option value="9">9:00</option>
+                    <option value="10">10:00</option>
+                    <option value="11">11:00</option>
+                    <option value="12">12:00</option>
+                    <option value="13">13:00</option>
+                    <option value="14">14:00</option>
+                    <option value="15">15:00</option>
+                    <option value="16">16:00</option>
+                    <option value="17">17:00</option>
+                    <option value="18">18:00</option>
+                    <option value="19">19:00</option>
+                    <option value="20">20:00</option>
+                    <option value="21">21:00</option>
+                    <option value="22">22:00</option>
+                    <option value="23">23:00</option>
+                    <option value="24">00:00</option>
                 </select>
             </div>
-            <input class="button-prikaz" type="submit" value="Prikaži">
+            <input class="button-prikaz" type="submit" (click)="submit()" value="Prikaži">
         </form>
     </div>
     <div class="map-container">
         <app-zemljevid class="zemljevid-container"></app-zemljevid>
     </div>
-    <div class="stats-container">
-        <p class="statistika-title"></p>
+    <div id="statistika" class="stats-container">
     </div>
 </div>

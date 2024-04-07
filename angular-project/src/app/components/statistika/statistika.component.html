@@ -2,8 +2,20 @@
     <div class="container">
         <div style="margin-top: 30px">
             <app-calendar></app-calendar>
+            <select (input)="fetchData()" id="gym">
+                <option value="0"></option>
+                <option value="1">Clever Bezigrad</option>
+                <option value="2">Clever 2</option>
+                <option value="3">Nz realno</option>
+                <option value="4">Da</option>
+            </select>
         </div>
-        <app-graph [Day]="'Monday'" [Fitness]="'CleverFit'" [data]="data" [id]="'map1'"></app-graph>
+        <app-graph [Day]="daysOfWeek[dayOfWeekNumber]" [Fitness]="fitnessString" [data]="dataGraph1" [id]="'map1'" [width]="'1000px'"></app-graph>
+    </div>
+    <div class="container1">
+        <app-graph [Day]="daysOfWeek[(dayOfWeekNumber+1)%7]" [id]="'map2'" [width]="'500px'" [data]="dataGraph2"></app-graph>
+        <app-graph [Day]="daysOfWeek[(dayOfWeekNumber+2)%7]" [id]="'map3'" [width]="'500px'" [data]="dataGraph3"></app-graph>
+        <app-graph [Day]="daysOfWeek[(dayOfWeekNumber+3)%7]" [id]="'map4'" [width]="'500px'" [data]="dataGraph4"></app-graph>
     </div>
     <div class="container1">
         <app-graph [Day]="'Monday'" [Fitness]="'CleverFit'" [data]="data" [id]="'map1'"></app-graph>

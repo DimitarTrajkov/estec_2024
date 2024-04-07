@@ -17,6 +17,7 @@ export class GraphComponent implements AfterViewInit, OnChanges {
   @Input() Fitness: string = '';
   @Input() data: GraphDataType[] = [];
   @Input() id: string = '';
+  @Input() width: string = '';
 
   constructor(private elRef: ElementRef) {}
 
@@ -34,12 +35,15 @@ export class GraphComponent implements AfterViewInit, OnChanges {
 
     const chartContainerId = `chartContainer_${this.id}`;
     this.elRef.nativeElement.querySelector('.chartContainer').setAttribute('id', chartContainerId);
+    const chartContainer = document.getElementById(chartContainerId) as HTMLElement;
+    if (chartContainer)
+      chartContainer.style.width = this.width;
 
     let chart = new CanvasJS.Chart(chartContainerId, {
       animationEnabled: true,
       theme: "light1",
       title: {
-        text: `${this.Fitness} - ${this.Day}`
+        text: `${this.Fitness} ${this.Day}`
       },
       data: [{
         type: "column",
