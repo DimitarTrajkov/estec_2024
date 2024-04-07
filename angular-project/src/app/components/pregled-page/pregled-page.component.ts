@@ -55,7 +55,9 @@ export class PregledPageComponent {
       (result: any) => {
         var statistika = document.getElementById("statistika")
         if(statistika)
-          statistika.innerHTML = '';
+          statistika.innerHTML = '<h3>STATISTIKA</h3><div style="padding-bottom: 10px;width: 100%;display: flex;'
+        + 'justify-content: space-around;margin: 0;font-weight: 700;"><p style=" margin: 0;font-weight: 700;"">'
+        + 'ČAS</p><p style="font-weight: 700;margin: 0">ŠT LJUDI</p></div>';
         result.forEach(function (value: string) {
           let newDiv = document.createElement("div");
           let newParagraph = document.createElement("p");

@@ -1,8 +1,8 @@
 <div class="main-container">
     <div class="container">
         <div style="margin-top: 30px">
-            <app-calendar></app-calendar>
-            <select (input)="fetchData()" id="gym">
+            <p class="pick-text">Izberite željeno telovadnico</p>
+            <select class="pick-gym" (input)="fetchData()" id="gym">
                 <option value="0"></option>
                 <option value="1">BODIFIT Ljubljana</option>
                 <option value="2">Clever fit Letališka</option>
@@ -12,6 +12,7 @@
                 <option value="6">Valkyrie</option>
                 <option value="7">FITINN Fitnes studio</option>
             </select>
+            <app-calendar></app-calendar>
         </div>
         <app-graph [Day]="daysOfWeek[dayOfWeekNumber]" [Fitness]="fitnessString" [data]="dataGraph1" [id]="'map1'" [width]="'1000px'"></app-graph>
     </div>
