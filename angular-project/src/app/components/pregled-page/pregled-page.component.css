@@ -132,3 +132,13 @@
     font-size: 16px;
     cursor: pointer;
   }
+  #statistka_pregled_naslov{
+    padding-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .statistka_pregled_naslov_p{
+    margin: 0;
+    font-weight: 700;
+  }
