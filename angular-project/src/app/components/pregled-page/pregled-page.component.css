@@ -6,19 +6,25 @@
     justify-content: space-between;
     align-items: center;
     font-family: 'Poppins', sans-serif;
+    background: url('/assets/pregledPageBackground5.png') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
 }
 
 .form-container {
     display: block;
-    background-color: #fff1cf;
+    background-color: #fff1cf6c;
     display: flex;
     justify-content: center;
     align-items: center;
     flex: 0 0 20%;
     height: 80%;
     margin-left: 21px;
+    border-radius: 10px;
     /* padding: 10px; */
-    border: 3px solid #000000
+    /* border: 3px solid #000000 */
+    /* opacity: 50%; */
     /* height: 70%;
     width: 25%; */
 }
@@ -28,7 +34,9 @@
     flex: 0 0 45%;
     height: 80%;
     /* padding: 10px; */
-    border: 3px solid #000000
+    /* border: 3px solid #000000; */
+    border: 20px ridge #f5bf98;
+    border-radius: 10px;
     /* height: 70%;
     width: 55%; */
 }
@@ -48,7 +56,7 @@
 .stats-container {
     padding: 10px; /* For demonstration purposes */
     overflow-y: auto;
-    background-color: #fff1cf;
+    background-color: #fff1cf6c;
     display: flex;
     flex-direction: column;
     font-size: 20px;
@@ -56,8 +64,9 @@
     flex: 0 0 15%;
     height: 80%;
     margin-right: 21px;
+    border-radius: 10px;
     /* padding: 10px; */
-    border: 3px solid #000000
+    /* border: 3px solid #000000 */
     /* height: 70%;
     width: 30; */
 }
