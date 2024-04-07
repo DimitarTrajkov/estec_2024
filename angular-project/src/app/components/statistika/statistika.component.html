@@ -4,10 +4,13 @@
             <app-calendar></app-calendar>
             <select (input)="fetchData()" id="gym">
                 <option value="0"></option>
-                <option value="1">Clever Bezigrad</option>
-                <option value="2">Clever 2</option>
-                <option value="3">Nz realno</option>
-                <option value="4">Da</option>
+                <option value="1">BODIFIT Ljubljana</option>
+                <option value="2">Clever fit Letališka</option>
+                <option value="3">Clever fit Situla</option>
+                <option value="4">BODYFIT Celje</option>
+                <option value="5">Clever fit Bežigrad</option>
+                <option value="6">Valkyrie</option>
+                <option value="7">FITINN Fitnes studio</option>
             </select>
         </div>
         <app-graph [Day]="daysOfWeek[dayOfWeekNumber]" [Fitness]="fitnessString" [data]="dataGraph1" [id]="'map1'" [width]="'1000px'"></app-graph>
